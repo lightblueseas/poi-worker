@@ -23,8 +23,6 @@
 	<properties>
 		<!-- JCOMMONS-LANG version -->
 		<jcommons-lang.version>4.35</jcommons-lang.version>
-		<!-- SILLY-COLLECTIONS version -->
-		<silly-collections.version>4.33</silly-collections.version>
 		<!-- TEST-OBJECTS version -->
 		<test-objects.version>4.28</test-objects.version>
 		<!-- EXTERNAL LIBRARIES versions -->
@@ -34,6 +32,7 @@
 		<!-- JOBJECT-EXTENSIONS version -->
 		<jobject-extensions.version>1.12</jobject-extensions.version>
 		<jobject-evaluate.version>${jobject-extensions.version}</jobject-evaluate.version>
+		<jobject-core.version>${jobject-extensions.version}</jobject-core.version>
 		<!-- FILE-WORKER version -->
 		<file-worker.version>4.23</file-worker.version>
 	</properties>
@@ -102,11 +101,10 @@
 				<artifactId>jobject-evaluate</artifactId>
 				<version>${jobject-evaluate.version}</version>
 			</dependency>
-			<!-- SILLY-COLLECTIONS DEPENDENCY -->
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
-				<artifactId>silly-collections</artifactId>
-				<version>${silly-collections.version}</version>
+				<artifactId>jobject-core</artifactId>
+				<version>${jobject-core.version}</version>
 			</dependency>
 
 		</dependencies>
@@ -124,21 +122,16 @@
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
 		</dependency>
+		
+		<dependency>
+			<groupId>de.alpharogroup</groupId>
+			<artifactId>jobject-core</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>de.alpharogroup</groupId>
 			<artifactId>jcommons-lang</artifactId>
-			<exclusions>
-				<exclusion>
-					<groupId>de.alpharogroup</groupId>
-					<artifactId>silly-collections</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<!-- SILLY-COLLECTIONS DEPENDENCY -->
-		<dependency>
-			<groupId>de.alpharogroup</groupId>
-			<artifactId>silly-collections</artifactId>
+			<scope>test</scope>
 		</dependency>
 
 		<dependency>
