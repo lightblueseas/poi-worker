@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
-		<version>4.1</version>
+		<version>4.2</version>
 		<relativePath></relativePath>
 	</parent>
 
-	<artifactId>file-worker</artifactId>
+	<artifactId>poi-worker</artifactId>
 	<version>4.23</version>
 
 	<name>${project.artifactId}</name>
@@ -28,15 +29,13 @@
 		<test-objects.version>4.28</test-objects.version>
 		<!-- EXTERNAL LIBRARIES versions -->
 		<poi.version>3.17</poi.version>
-		<zip4j.version>1.3.2</zip4j.version>
 		<!-- MEANBEAN-FACTORIES version -->
 		<meanbean-factories.version>1.1</meanbean-factories.version>
-		<!-- MYSTIC-CRYPT versions -->
-		<mystic-crypt.version>5.4</mystic-crypt.version>
-		<crypt-api.version>${mystic-crypt.version}</crypt-api.version>
 		<!-- JOBJECT-EXTENSIONS version -->
 		<jobject-extensions.version>1.12</jobject-extensions.version>
 		<jobject-evaluate.version>${jobject-extensions.version}</jobject-evaluate.version>
+		<!-- FILE-WORKER version -->
+		<file-worker.version>4.23</file-worker.version>
 	</properties>
 
 	<licenses>
@@ -80,27 +79,22 @@
 			</dependency>
 
 			<dependency>
-				<groupId>net.lingala.zip4j</groupId>
-				<artifactId>zip4j</artifactId>
-				<version>${zip4j.version}</version>
-			</dependency>
-
-			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>jcommons-lang</artifactId>
 				<version>${jcommons-lang.version}</version>
+			</dependency>
+
+			<!-- FILE-WORKER DEPENDENCY -->
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>file-worker</artifactId>
+				<version>${file-worker.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>test-objects</artifactId>
 				<version>${test-objects.version}</version>
-			</dependency>
-			<!-- CRYPT-API DEPENDENCY -->
-			<dependency>
-				<groupId>de.alpharogroup</groupId>
-				<artifactId>crypt-api</artifactId>
-				<version>${crypt-api.version}</version>
 			</dependency>
 			<!-- JOBJECT-EVALUATE DEPENDENCY -->
 			<dependency>
@@ -132,11 +126,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>net.lingala.zip4j</groupId>
-			<artifactId>zip4j</artifactId>
-		</dependency>
-
-		<dependency>
 			<groupId>de.alpharogroup</groupId>
 			<artifactId>jcommons-lang</artifactId>
 			<exclusions>
@@ -145,11 +134,6 @@
 					<artifactId>silly-collections</artifactId>
 				</exclusion>
 			</exclusions>
-		</dependency>
-		<!-- CRYPT-API DEPENDENCY -->
-		<dependency>
-			<groupId>de.alpharogroup</groupId>
-			<artifactId>crypt-api</artifactId>
 		</dependency>
 		<!-- SILLY-COLLECTIONS DEPENDENCY -->
 		<dependency>
@@ -178,6 +162,12 @@
 		<dependency>
 			<groupId>de.alpharogroup</groupId>
 			<artifactId>jobject-evaluate</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- FILE-WORKER DEPENDENCY -->
+		<dependency>
+			<groupId>de.alpharogroup</groupId>
+			<artifactId>file-worker</artifactId>
 			<scope>test</scope>
 		</dependency>
 
@@ -246,30 +236,18 @@
 								<!-- enums -->
 								<!-- beans -->
 								<!-- exceptions -->
-								<exclude>de/alpharogroup/file/exceptions/**/*.class</exclude>
 								<!-- interfaces -->
-								<exclude>de/alpharogroup/file/compare/interfaces/**/*.class</exclude>
 								<!-- deprecated classes -->
-								<exclude>de/alpharogroup/file/url/**/*.class</exclude>
 								<!-- constant classes with only constants -->
 								<!-- explicit abstract classes -->
-								<exclude>de/alpharogroup/file/FileConst.class</exclude>
 								<!-- explicit annotations -->
 								<!-- explicit bean classes -->
 								<!-- explicit constant classes with only constants -->
 								<!-- explicit delegation classes -->
-								<exclude>de/alpharogroup/file/checksum/ChecksumQuietlyExtensions.class</exclude>
-								<exclude>de/alpharogroup/file/create/CreateFileQuietlyExtensions.class</exclude>
-								<exclude>de/alpharogroup/file/rename/RenameFileQuietlyExtensions.class</exclude>
-								<exclude>de/alpharogroup/file/write/WriteFileQuietlyExtensions.class</exclude>
-								<exclude>de/alpharogroup/file/zip/Zip4jExtensions.class</exclude>
 								<!-- explicit deprecated classes -->
-								<exclude>de/alpharogroup/file/zip/ZipDecryptInputStream.class</exclude>
 								<!-- explicit enums -->
-								<exclude>de/alpharogroup/file/zip/ZipState.class</exclude>
 								<!-- explicit exceptions -->
 								<!-- explicit interfaces -->
-								<exclude>de/alpharogroup/file/zip/ZipModel.class</exclude>
 							</excludes>
 						</instrumentation>
 					</configuration>
