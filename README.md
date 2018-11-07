@@ -11,7 +11,7 @@
 
 </div>
 
-Project that holds utility class for apacha-poi components operations.
+Project that holds utility class for the apache-poi components operations.
 
 ## License
 
