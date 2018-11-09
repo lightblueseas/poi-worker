@@ -12,13 +12,13 @@
 	</parent>
 
 	<artifactId>poi-worker</artifactId>
-	<version>4.23</version>
+	<version>3.17</version>
 
 	<name>${project.artifactId}</name>
 
 	<description>Project that holds utility class for file operations.</description>
 
-	<url>https://github.com/lightblueseas/file-worker</url>
+	<url>https://github.com/lightblueseas/${project.artifactId}</url>
 
 	<properties>
 		<!-- JCOMMONS-LANG version -->
@@ -46,19 +46,19 @@
 	</licenses>
 
 	<scm>
-		<connection>scm:git:git:@github.com:lightblueseas/file-worker.git</connection>
-		<developerConnection>scm:git:git@github.com:lightblueseas/file-worker.git</developerConnection>
-		<url>git:@github.com:lightblueseas/file-worker.git</url>
+		<connection>scm:git:git:@github.com:lightblueseas/${project.artifactId}.git</connection>
+		<developerConnection>scm:git:git@github.com:lightblueseas/${project.artifactId}.git</developerConnection>
+		<url>git:@github.com:lightblueseas/${project.artifactId}.git</url>
 	</scm>
 
 	<issueManagement>
 		<system>github</system>
-		<url>https://github.com/lightblueseas/file-worker/issues</url>
+		<url>https://github.com/lightblueseas/${project.artifactId}/issues</url>
 	</issueManagement>
 
 	<ciManagement>
 		<system>travis-ci</system>
-		<url>https://travis-ci.org/lightblueseas/file-worker</url>
+		<url>https://travis-ci.org/lightblueseas/${project.artifactId}</url>
 	</ciManagement>
 
 	<dependencyManagement>
