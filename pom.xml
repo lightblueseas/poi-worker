@@ -12,7 +12,7 @@
 	</parent>
 
 	<artifactId>poi-worker</artifactId>
-	<version>3.17</version>
+	<version>4-SNAPSHOT</version>
 
 	<name>${project.artifactId}</name>
 
