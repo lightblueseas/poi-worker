@@ -1,50 +1,50 @@
-# file-worker
+# poi-worker
 
 <div align="center">
 
-[![Build Status](https://travis-ci.org/lightblueseas/file-worker.svg?branch=master)](https://travis-ci.org/lightblueseas/file-worker) 
-[![Coverage Status](https://coveralls.io/repos/github/lightblueseas/file-worker/badge.svg?branch=develop)](https://coveralls.io/github/lightblueseas/file-worker?branch=master)
-[![Open Issues](https://img.shields.io/github/issues/lightblueseas/file-worker.svg?style=flat)](https://github.com/lightblueseas/file-worker/issues)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/file-worker/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/file-worker)
-[![Javadocs](http://www.javadoc.io/badge/de.alpharogroup/file-worker.svg)](http://www.javadoc.io/doc/de.alpharogroup/file-worker)
+[![Build Status](https://travis-ci.org/lightblueseas/poi-worker.svg?branch=master)](https://travis-ci.org/lightblueseas/poi-worker) 
+[![Coverage Status](https://coveralls.io/repos/github/lightblueseas/poi-worker/badge.svg?branch=develop)](https://coveralls.io/github/lightblueseas/poi-worker?branch=master)
+[![Open Issues](https://img.shields.io/github/issues/lightblueseas/poi-worker.svg?style=flat)](https://github.com/lightblueseas/poi-worker/issues)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/poi-worker/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/poi-worker)
+[![Javadocs](http://www.javadoc.io/badge/de.alpharogroup/poi-worker.svg)](http://www.javadoc.io/doc/de.alpharogroup/poi-worker)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](http://opensource.org/licenses/MIT)
 
 </div>
 
-Project that holds utility class for file operations.
+Project that holds utility class for the apache-poi components operations.
 
 ## License
 
-The source code comes under the liberal MIT License, making file-worker great for all types of applications.
+The source code comes under the liberal MIT License, making poi-worker great for all types of applications.
 
 ## Maven dependency
 
 Maven dependency is now on sonatype.
-Check out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;gav~de.alpharogroup~file-worker~~~) for latest snapshots and releases.
+Check out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;gav~de.alpharogroup~poi-worker~~~) for latest snapshots and releases.
 
-Add the following maven dependency to your project `pom.xml` if you want to import the core functionality of file-worker:
+Add the following maven dependency to your project `pom.xml` if you want to import the core functionality of poi-worker:
 
 	<properties>
 			...
-		<!-- FILE-WORKER version -->
-		<file-worker.version>4.23</file-worker.version>
+		<!-- POI-WORKER version -->
+		<poi-worker.version>3.17</poi-worker.version>
 			...
 	</properties>
 			...
 		<dependencies>
 			...
-			<!-- FILE-WORKER DEPENDENCY -->
+			<!-- POI-WORKER DEPENDENCY -->
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
-				<artifactId>file-worker</artifactId>
-				<version>${file-worker.version}</version>
+				<artifactId>poi-worker</artifactId>
+				<version>${poi-worker.version}</version>
 			</dependency>
 			...
 		</dependencies>
 
 ## Semantic Versioning
 
-The versions of file-worker are maintained with the Semantic Versioning guidelines.
+The versions of poi-worker are maintained with the Semantic Versioning guidelines.
 
 Release version numbers will be incremented in the following format:
 
@@ -55,18 +55,18 @@ For detailed information on versioning you can visit the [wiki page](https://git
 
 ## Want to Help and improve it? ###
 
-The source code for file-worker are on GitHub. Please feel free to fork and send pull requests!
+The source code for poi-worker are on GitHub. Please feel free to fork and send pull requests!
 
-Create your own fork of [lightblueseas/file-worker/fork](https://github.com/lightblueseas/file-worker/fork)
+Create your own fork of [lightblueseas/poi-worker/fork](https://github.com/lightblueseas/poi-worker/fork)
 
-To share your changes, [submit a pull request](https://github.com/lightblueseas/file-worker/pull/new/develop).
+To share your changes, [submit a pull request](https://github.com/lightblueseas/poi-worker/pull/new/develop).
 
 Don't forget to add new units tests on your changes.
 
 ## Contacting the Developers
 
-Do not hesitate to contact the file-worker developers with your questions, concerns, comments, bug reports, or feature requests.
-- Feature requests, questions and bug reports can be reported at the [issues page](https://github.com/lightblueseas/file-worker/issues).
+Do not hesitate to contact the poi-worker developers with your questions, concerns, comments, bug reports, or feature requests.
+- Feature requests, questions and bug reports can be reported at the [issues page](https://github.com/lightblueseas/poi-worker/issues).
 
 ## Note
 
@@ -81,14 +81,14 @@ If you like this project, please consider a donation through paypal: <a href="ht
 
 or over bitcoin or bitcoin-cash with:
 
-1Jzso5h7U82QCNmgxxSCya1yUK7UVcSXsW
+36JxRRDfRazLNqUV6NsywCw1q7TK38ukpC
 
 or over ether with:
 
-0xaB6EaE10F352268B0CA672Dd6e999C86344D49D8
+0x588Aa02De98B1Ef70afeDC3ec5290130a3E5e273
 
 or over flattr: 
-<a href="https://flattr.com/submit/auto?fid=r7vp62&url=https%3A%2F%2Fgithub.com%2Flightblueseas%2Ffile-worker" target="_blank">
+<a href="https://flattr.com/submit/auto?fid=r7vp62&url=https%3A%2F%2Fgithub.com%2Flightblueseas%2Fpoi-worker" target="_blank">
 <img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" />
 </a>
 
