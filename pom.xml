@@ -34,7 +34,7 @@
 		<jobject-evaluate.version>${jobject-extensions.version}</jobject-evaluate.version>
 		<jobject-core.version>${jobject-extensions.version}</jobject-core.version>
 		<!-- FILE-WORKER version -->
-		<file-worker.version>4.23</file-worker.version>
+		<file-worker.version>5</file-worker.version>
 	</properties>
 
 	<licenses>
