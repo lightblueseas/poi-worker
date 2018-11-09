@@ -1,4 +1,4 @@
-# file-worker .travis.yml
+# poi-worker .travis.yml
 
 language: java
 

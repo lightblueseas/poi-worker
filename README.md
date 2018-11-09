@@ -11,7 +11,7 @@
 
 </div>
 
-Project that holds utility class for apacha-poi components operations.
+Project that holds utility class for the apache-poi components operations.
 
 ## License
 
@@ -26,14 +26,14 @@ Add the following maven dependency to your project `pom.xml` if you want to impo
 
 	<properties>
 			...
-		<!-- FILE-WORKER version -->
+		<!-- POI-WORKER version -->
 		<poi-worker.version>4.23</poi-worker.version>
 			...
 	</properties>
 			...
 		<dependencies>
 			...
-			<!-- FILE-WORKER DEPENDENCY -->
+			<!-- POI-WORKER DEPENDENCY -->
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>poi-worker</artifactId>
