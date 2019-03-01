@@ -287,10 +287,6 @@ public class ExportExcelExtensionsTest
 			workbook.write(fileOut);
 			workbook.close();
 		}
-		// FileOutputStream fileOut = new FileOutputStream(emptyWorkbook);
-		// workbook.write(fileOut);
-		// fileOut.close();
-		workbook.close();
 
 		HSSFWorkbook hssfWorkbook = ExportExcelExtensions
 			.replaceNullCellsIntoEmptyCells(emptyWorkbook);
