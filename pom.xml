@@ -7,12 +7,12 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
-		<version>4.5</version>
+		<version>4.7</version>
 		<relativePath></relativePath>
 	</parent>
 
 	<artifactId>poi-worker</artifactId>
-	<version>4</version>
+	<version>4.0.1</version>
 
 	<name>${project.artifactId}</name>
 
@@ -21,18 +21,18 @@
 	<url>https://github.com/lightblueseas/${project.artifactId}</url>
 
 	<properties>
+		<!-- FILE-WORKER version -->
+		<file-worker.version>5.1</file-worker.version>
 		<!-- JCOMMONS-LANG version -->
-		<jcommons-lang.version>5.1</jcommons-lang.version>
+		<jcommons-lang.version>5.1.1</jcommons-lang.version>
 		<!-- TEST-OBJECTS version -->
-		<test-objects.version>5</test-objects.version>
+		<test-objects.version>5.0.1</test-objects.version>
 		<!-- EXTERNAL LIBRARIES versions -->
-		<poi.version>3.17</poi.version>
+		<poi.version>4.0.1</poi.version>
 		<!-- JOBJECT-EXTENSIONS version -->
 		<jobject-extensions.version>2.5</jobject-extensions.version>
 		<jobject-evaluate.version>${jobject-extensions.version}</jobject-evaluate.version>
 		<jobject-core.version>${jobject-extensions.version}</jobject-core.version>
-		<!-- FILE-WORKER version -->
-		<file-worker.version>5.0.1</file-worker.version>
 	</properties>
 
 	<licenses>
