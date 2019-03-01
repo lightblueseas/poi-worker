@@ -37,30 +37,30 @@ import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
 
 import lombok.experimental.UtilityClass;
 
 /**
- * The class {@link ExportExcelExtensions}.
+ * The class {@link ExportExcelExtensions} provides methods for export excel sheet {@link File}
+ * objects
  */
 @UtilityClass
-public final class ExportExcelExtensions
+public class ExportExcelExtensions
 {
 
 	/**
-	 * Exportiert die übergebene excel-Datei in eine Liste mit zweidimensionalen Arrays für jeweils
-	 * ein sheet in der excel-Datei.
+	 * Exports the given excel sheet {@link File} and return a two dimensonal array which holds the
+	 * sheets and arrays of the rows
 	 *
 	 * @param excelSheet
-	 *            Die excel-Datei.
-	 * @return Gibt eine Liste mit zweidimensionalen Arrays für jeweils ein sheet in der excel-Datei
-	 *         zurück.
+	 *            the excel sheet {@link File}
+	 * @return the a two dimensonal array which holds the sheets and arrays of the rows
 	 * @throws IOException
-	 *             Fals ein Fehler beim Lesen aufgetreten ist.
+	 *             Signals that an I/O exception has occurred.
 	 * @throws FileNotFoundException
-	 *             Fals die excel-Datei nicht gefunden wurde.
+	 *             Signals that the file was not found
 	 */
-	@SuppressWarnings("deprecation")
 	public static List<String[][]> exportWorkbook(final File excelSheet)
 		throws IOException, FileNotFoundException
 	{
@@ -85,42 +85,7 @@ public final class ExportExcelExtensions
 				{
 					for (int j = 0; j < columns; j++)
 					{
-						final HSSFCell cell = row.getCell(j);
-						if (null == cell)
-						{
-							excelSheetInTDArray[i][j] = "";
-						}
-						else
-						{
-							final int cellType = cell.getCellType();
-							if (cellType == Cell.CELL_TYPE_BLANK)
-							{
-								excelSheetInTDArray[i][j] = "";
-							}
-							else if (cellType == Cell.CELL_TYPE_BOOLEAN)
-							{
-								excelSheetInTDArray[i][j] = Boolean
-									.toString(cell.getBooleanCellValue());
-							}
-							else if (cellType == Cell.CELL_TYPE_ERROR)
-							{
-								excelSheetInTDArray[i][j] = "";
-							}
-							else if (cellType == Cell.CELL_TYPE_FORMULA)
-							{
-								excelSheetInTDArray[i][j] = cell.getCellFormula();
-							}
-							else if (cellType == Cell.CELL_TYPE_NUMERIC)
-							{
-								excelSheetInTDArray[i][j] = Double
-									.toString(cell.getNumericCellValue());
-							}
-							else if (cellType == Cell.CELL_TYPE_STRING)
-							{
-								excelSheetInTDArray[i][j] = cell.getRichStringCellValue()
-									.getString();
-							}
-						}
+						excelSheetInTDArray[i][j] = getCellValueAsString(row.getCell(j));
 					}
 				}
 			}
@@ -130,22 +95,61 @@ public final class ExportExcelExtensions
 		return sheetList;
 	}
 
+	/**
+	 * Gets the cell value as String from the given {@link Cell} object
+	 *
+	 * @param cell
+	 *            the cell
+	 * @return the cell value
+	 */
+	public static String getCellValueAsString(Cell cell)
+	{
+		String result = null;
+		if (null == cell)
+		{
+			return "";
+		}
+		CellType cellType = cell.getCellType();
+
+		if (CellType.BLANK.equals(cellType))
+		{
+			result = "";
+		}
+		else if (CellType.BOOLEAN.equals(cellType))
+		{
+			result = Boolean.toString(cell.getBooleanCellValue());
+		}
+		else if (CellType.ERROR.equals(cellType))
+		{
+			result = "";
+		}
+		else if (CellType.FORMULA.equals(cellType))
+		{
+			result = cell.getCellFormula();
+		}
+		else if (CellType.NUMERIC.equals(cellType))
+		{
+			result = Double.toString(cell.getNumericCellValue());
+		}
+		else if (CellType.STRING.equals(cellType))
+		{
+			result = cell.getRichStringCellValue().getString();
+		}
+		return result;
+	}
 
 	/**
-	 * Exportiert die übergebene excel-Datei in eine geschachtelte Liste mit Listen von sheets und
-	 * Listen von den Zeilen der sheets von der excel-Datei.
+	 * Exports the given excel sheet {@link File} in a list of lists with the list of the sheets and
+	 * lists of the rows.
 	 *
 	 * @param excelSheet
-	 *            Die excel-Datei.
-	 * @return Gibt eine Liste mit Listen von den sheets in der excel-Datei zurück. Die Listen mit
-	 *         den sheets beinhalten weitere Listen mit String die jeweils eine Zeile
-	 *         repräsentieren.
+	 *            the excel sheet {@link File}
+	 * @return the a list with the sheets and lists of the rows.
 	 * @throws IOException
-	 *             Fals ein Fehler beim Lesen aufgetreten ist.
+	 *             Signals that an I/O exception has occurred.
 	 * @throws FileNotFoundException
-	 *             Fals die excel-Datei nicht gefunden wurde.
+	 *             Signals that the file was not found
 	 */
-	@SuppressWarnings("deprecation")
 	public static List<List<List<String>>> exportWorkbookAsStringList(final File excelSheet)
 		throws IOException, FileNotFoundException
 	{
@@ -168,39 +172,7 @@ public final class ExportExcelExtensions
 					final List<String> reihe = new ArrayList<>();
 					for (int j = 0; j < columns; j++)
 					{
-						final HSSFCell cell = row.getCell(j);
-						if (null == cell)
-						{
-							reihe.add("");
-						}
-						else
-						{
-							final int cellType = cell.getCellType();
-							if (cellType == Cell.CELL_TYPE_BLANK)
-							{
-								reihe.add("");
-							}
-							else if (cellType == Cell.CELL_TYPE_BOOLEAN)
-							{
-								reihe.add(Boolean.toString(cell.getBooleanCellValue()));
-							}
-							else if (cellType == Cell.CELL_TYPE_ERROR)
-							{
-								reihe.add("");
-							}
-							else if (cellType == Cell.CELL_TYPE_FORMULA)
-							{
-								reihe.add(cell.getCellFormula());
-							}
-							else if (cellType == Cell.CELL_TYPE_NUMERIC)
-							{
-								reihe.add(Double.toString(cell.getNumericCellValue()));
-							}
-							else if (cellType == Cell.CELL_TYPE_STRING)
-							{
-								reihe.add(cell.getRichStringCellValue().getString());
-							}
-						}
+						reihe.add(getCellValueAsString(row.getCell(j)));
 					}
 					excelSheetList.add(reihe);
 				}
@@ -222,7 +194,6 @@ public final class ExportExcelExtensions
 	 * @throws FileNotFoundException
 	 *             the file not found exception
 	 */
-	@SuppressWarnings("deprecation")
 	public static HSSFWorkbook replaceNullCellsIntoEmptyCells(final File excelSheet)
 		throws IOException, FileNotFoundException
 	{
@@ -245,7 +216,7 @@ public final class ExportExcelExtensions
 						HSSFCell cell = row.getCell(j);
 						if (cell == null)
 						{
-							cell = row.createCell(j, Cell.CELL_TYPE_BLANK);
+							cell = row.createCell(j, CellType.BLANK);
 						}
 					}
 				}
