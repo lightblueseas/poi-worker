@@ -26,7 +26,7 @@
 		<!-- TEST-OBJECTS version -->
 		<test-objects.version>5</test-objects.version>
 		<!-- EXTERNAL LIBRARIES versions -->
-		<poi.version>3.17</poi.version>
+		<poi.version>4.0.1</poi.version>
 		<!-- JOBJECT-EXTENSIONS version -->
 		<jobject-extensions.version>2.5</jobject-extensions.version>
 		<jobject-evaluate.version>${jobject-extensions.version}</jobject-evaluate.version>
