@@ -40,6 +40,7 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
 
 import lombok.experimental.UtilityClass;
+import org.apache.poi.ss.usermodel.Row;
 
 /**
  * The class {@link ExportExcelExtensions} provides methods for export excel sheet {@link File}
@@ -49,6 +50,68 @@ import lombok.experimental.UtilityClass;
 public class ExportExcelExtensions
 {
 
+	/**
+	 * Checks if the given {@link Row} is empty
+	 *
+	 * @param row
+	 *            the row to check
+	 * @return true if the row is empty otherwise false
+	 */
+	public static boolean isEmpty(Row row) {
+		if (row == null) {
+			return true;
+		}
+		for (Cell cell : row) {
+			if (!getCellValueAsString(cell).isEmpty()) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	/**
+	 * Gets the cell value as an object from the given {@link Cell} object
+	 *
+	 * @param cell
+	 *            the cell
+	 * @return the cell value
+	 */
+	public static Object getCellValue(Cell cell)
+	{
+		Object result = null;
+		if (null == cell)
+		{
+			return "";
+		}
+		CellType cellType = cell.getCellType();
+
+		if (CellType.BLANK.equals(cellType))
+		{
+			result = "";
+		}
+		else if (CellType.BOOLEAN.equals(cellType))
+		{
+			result = cell.getBooleanCellValue();
+		}
+		else if (CellType.ERROR.equals(cellType))
+		{
+			result = "";
+		}
+		else if (CellType.FORMULA.equals(cellType))
+		{
+			result = cell.getCellFormula();
+		}
+		else if (CellType.NUMERIC.equals(cellType))
+		{
+			result = cell.getNumericCellValue();
+		}
+		else if (CellType.STRING.equals(cellType))
+		{
+			result = cell.getRichStringCellValue().getString();
+		}
+		return result;
+	}
+	
 	/**
 	 * Exports the given excel sheet {@link File} and return a two dimensonal array which holds the
 	 * sheets and arrays of the rows
