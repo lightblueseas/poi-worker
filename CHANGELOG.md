@@ -1,6 +1,14 @@
 ## Change log
 ----------------------
 
+Version 4.1-SNAPSHOT
+-------------
+
+ADDED:
+ 
+- new method for check if a row is empty created
+- new method get the cell value as object created
+
 Version 4.0.1
 -------------
 
