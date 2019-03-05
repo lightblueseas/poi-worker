@@ -146,6 +146,30 @@ public class ExportExcelExtensionsTest
 	}
 
 	/**
+	 * Test method for {@link ExportExcelExtensions#isEmpty(Row)}
+	 */
+	@Test
+	public void testIsEmpty() {
+		// TODO implement...
+	}
+
+	/**
+	 * Test method for {@link ExportExcelExtensions#getCellValue(Cell)}
+	 */
+	@Test
+	public void testGetCellValue() {
+		// TODO implement...
+	}
+
+	/**
+	 * Test method for {@link ExportExcelExtensions#getCellValueAsString(Cell)}
+	 */
+	@Test
+	public void testGetCellValueAsString() {
+		// TODO implement...
+	}
+
+	/**
 	 * Test method for {@link ExportExcelExtensions#exportWorkbook(File)}
 	 */
 	@Test
@@ -238,7 +262,7 @@ public class ExportExcelExtensionsTest
 
 	/**
 	 * Test method for {@link ExportExcelExtensions#replaceNullCellsIntoEmptyCells(File)}
-	 * 
+	 *
 	 * @throws IOException
 	 * @throws FileNotFoundException
 	 */
