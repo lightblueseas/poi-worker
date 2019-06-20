@@ -14,6 +14,8 @@
 
 Project that holds utility class for the apache-poi components operations.
 
+If you like this project put a ⭐ and donate
+
 ## License
 
 The source code comes under the liberal MIT License, making poi-worker great for all types of applications.
