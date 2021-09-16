@@ -5,7 +5,8 @@ Version 4.1-SNAPSHOT
 -------------
 
 ADDED:
- 
+
+- gradle as build system
 - new method for check if a row is empty created
 - new method get the cell value as object created
 
