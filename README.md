@@ -5,8 +5,8 @@
 [![Build Status](https://travis-ci.org/lightblueseas/poi-worker.svg?branch=master)](https://travis-ci.org/lightblueseas/poi-worker) 
 [![Coverage Status](https://coveralls.io/repos/github/lightblueseas/poi-worker/badge.svg?branch=develop)](https://coveralls.io/github/lightblueseas/poi-worker?branch=master)
 [![Open Issues](https://img.shields.io/github/issues/lightblueseas/poi-worker.svg?style=flat)](https://github.com/lightblueseas/poi-worker/issues)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/poi-worker/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/poi-worker)
-[![Javadocs](http://www.javadoc.io/badge/de.alpharogroup/poi-worker.svg)](http://www.javadoc.io/doc/de.alpharogroup/poi-worker)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/poi-worker/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/poi-worker)
+[![Javadocs](http://www.javadoc.io/badge/io.github.astrapi69/poi-worker.svg)](http://www.javadoc.io/doc/io.github.astrapi69/poi-worker)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](http://opensource.org/licenses/MIT)
 [![Donate](https://img.shields.io/badge/donate-❤-ff2244.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GVBTWLRAZ7HB8)
 
@@ -23,7 +23,7 @@ The source code comes under the liberal MIT License, making poi-worker great for
 ## Maven dependency
 
 Maven dependency is now on sonatype.
-Check out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;gav~de.alpharogroup~poi-worker~~~) for latest snapshots and releases.
+Check out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;gav~io.github.astrapi69~poi-worker~~~) for latest snapshots and releases.
 
 Add the following maven dependency to your project `pom.xml` if you want to import the core functionality of poi-worker:
 
@@ -38,7 +38,7 @@ Add the following maven dependency to your project `pom.xml` if you want to impo
 			...
 			<!-- POI-WORKER DEPENDENCY -->
 			<dependency>
-				<groupId>de.alpharogroup</groupId>
+				<groupId>io.github.astrapi69</groupId>
 				<artifactId>poi-worker</artifactId>
 				<version>${poi-worker.version}</version>
 			</dependency>
