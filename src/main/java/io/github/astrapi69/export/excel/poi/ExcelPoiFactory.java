@@ -22,11 +22,13 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.export.excel.poi;
+package io.github.astrapi69.export.excel.poi;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+
+import lombok.experimental.UtilityClass;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.CellStyle;
@@ -37,7 +39,6 @@ import org.apache.poi.ss.util.WorkbookUtil;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import de.alpharogroup.check.Check;
-import lombok.experimental.UtilityClass;
 
 /**
  * Factory class for create poi objects.

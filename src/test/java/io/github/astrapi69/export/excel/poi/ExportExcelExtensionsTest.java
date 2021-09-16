@@ -22,7 +22,7 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.export.excel.poi;
+package io.github.astrapi69.export.excel.poi;
 
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
@@ -61,11 +61,10 @@ import de.alpharogroup.lang.ClassExtensions;
  */
 public class ExportExcelExtensionsTest
 {
-	File emptyWorkbook;
 	final String twoDimArray[][] = { { "1", "a", "!" }, { "2", "b", "?" }, { "3", "c", "%" } };
 	final String twoDimArrayDouble[][] = { { "1.0", "a", "!" }, { "2.0", "b", "?" },
 			{ "3.0", "c", "%" } };
-
+	File emptyWorkbook;
 	Workbook workbook;
 
 
@@ -149,7 +148,8 @@ public class ExportExcelExtensionsTest
 	 * Test method for {@link ExportExcelExtensions#isEmpty(Row)}
 	 */
 	@Test
-	public void testIsEmpty() {
+	public void testIsEmpty()
+	{
 		// TODO implement...
 	}
 
@@ -157,7 +157,8 @@ public class ExportExcelExtensionsTest
 	 * Test method for {@link ExportExcelExtensions#getCellValue(Cell)}
 	 */
 	@Test
-	public void testGetCellValue() {
+	public void testGetCellValue()
+	{
 		// TODO implement...
 	}
 
@@ -165,7 +166,8 @@ public class ExportExcelExtensionsTest
 	 * Test method for {@link ExportExcelExtensions#getCellValueAsString(Cell)}
 	 */
 	@Test
-	public void testGetCellValueAsString() {
+	public void testGetCellValueAsString()
+	{
 		// TODO implement...
 	}
 
