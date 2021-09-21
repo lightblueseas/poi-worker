@@ -38,7 +38,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.util.WorkbookUtil;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import de.alpharogroup.check.Check;
+import io.github.astrapi69.check.Check;
 
 /**
  * Factory class for create poi objects.

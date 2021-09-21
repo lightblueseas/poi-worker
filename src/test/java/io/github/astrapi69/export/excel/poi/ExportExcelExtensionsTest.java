@@ -51,10 +51,10 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import de.alpharogroup.file.delete.DeleteFileExtensions;
-import de.alpharogroup.file.search.PathFinder;
-import de.alpharogroup.io.StreamExtensions;
-import de.alpharogroup.lang.ClassExtensions;
+import io.github.astrapi69.file.delete.DeleteFileExtensions;
+import io.github.astrapi69.file.search.PathFinder;
+import io.github.astrapi69.io.StreamExtensions;
+import io.github.astrapi69.lang.ClassExtensions;
 
 /**
  * The unit test class for the class {@link ExportExcelExtensions}.

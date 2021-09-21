@@ -169,13 +169,10 @@ dependencies {
     testAnnotationProcessor("org.projectlombok:lombok:$lombokVersion")
     implementation("org.apache.poi:poi:$poiVersion")
     implementation("org.apache.poi:poi-ooxml:$poiOoxmlVersion")
-    implementation("de.alpharogroup:jobject-core:$jobjectCoreVersion")
-    testImplementation("de.alpharogroup:jcommons-lang:$jcommonsLangVersion")
-    testImplementation("de.alpharogroup:test-objects:$testObjectsVersion")
+    implementation("io.github.astrapi69:jobj-core:$jobjCoreVersion")
+    testImplementation("io.github.astrapi69:silly-io:$sillyIoVersion")
     testImplementation("org.meanbean:meanbean:$meanbeanVersion")
-    testImplementation("de.alpharogroup:meanbean-factories:$meanbeanFactoriesVersion")
-    testImplementation("de.alpharogroup:jobject-evaluate:$jobjectEvaluateVersion")
-    testImplementation("de.alpharogroup:file-worker:$fileWorkerVersion")
+    testImplementation("io.github.astrapi69:file-worker:$fileWorkerVersion")
     testImplementation("org.testng:testng:$testngVersion")
 }
 

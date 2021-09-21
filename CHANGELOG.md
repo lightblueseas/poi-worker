@@ -10,6 +10,15 @@ ADDED:
 - new method for check if a row is empty created
 - new method get the cell value as object created
 
+CHANGED:
+
+- update of dependency poi to new version 5.0.0
+- update of dependency lombok to new version 1.18.20
+- update of dependency file-worker to new version 5.10
+- update of test dependency silly-io to new version 1.6
+- update of test dependency testng to new version 7.4.0
+- removed unused dependencies
+
 Version 4.0.1
 -------------
 
