@@ -9,6 +9,7 @@ ADDED:
 - gradle as build system
 - new method for check if a row is empty created
 - new method get the cell value as object created
+- new class ReadExcelExtensions that reads workbook(excel) files
 
 CHANGED:
 

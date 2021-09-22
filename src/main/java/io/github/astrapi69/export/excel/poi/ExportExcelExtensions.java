@@ -41,6 +41,7 @@ import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.util.NumberToTextConverter;
 
 /**
  * The class {@link ExportExcelExtensions} provides methods for export excel sheet {@link File}
@@ -196,7 +197,7 @@ public class ExportExcelExtensions
 		}
 		else if (CellType.NUMERIC.equals(cellType))
 		{
-			result = Double.toString(cell.getNumericCellValue());
+			result = NumberToTextConverter.toText(cell.getNumericCellValue());
 		}
 		else if (CellType.STRING.equals(cellType))
 		{
@@ -220,13 +221,17 @@ public class ExportExcelExtensions
 	public static List<List<List<String>>> exportWorkbookAsStringList(final File excelSheet)
 		throws IOException, FileNotFoundException
 	{
-		final POIFSFileSystem fs = new POIFSFileSystem(new FileInputStream(excelSheet));
-		final HSSFWorkbook wb = new HSSFWorkbook(fs);
+		final HSSFWorkbook wb = ReadExcelExtensions.readHSSFWorkbook(excelSheet);
+		return convertToListofLists(wb);
+	}
+
+	private static List<List<List<String>>> convertToListofLists(HSSFWorkbook wb) throws IOException
+	{
 		final int numberOfSheets = wb.getNumberOfSheets();
 		final List<List<List<String>>> sl = new ArrayList<>();
 		for (int sheetNumber = 0; sheetNumber < numberOfSheets; sheetNumber++)
 		{
-			HSSFSheet sheet = null;
+			HSSFSheet sheet;
 			sheet = wb.getSheetAt(sheetNumber);
 			final int rows = sheet.getLastRowNum();
 			final int columns = sheet.getRow(0).getLastCellNum();
