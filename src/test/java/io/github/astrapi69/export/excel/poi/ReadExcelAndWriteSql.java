@@ -49,6 +49,7 @@ public class ReadExcelAndWriteSql
 		String actual;
 		String expected;
 		String excelFilePath;
+		StringBuilder sb;
 		// read excel sheet
 		excelFilePath = "addresses.xlsx";
 		final File workbookFile = new File(PathFinder.getSrcTestResourcesDir(), excelFilePath);
@@ -95,11 +96,12 @@ public class ReadExcelAndWriteSql
 
 		workbook.close();
 		inputStream.close();
-		// create the sql statements
-		StringBuilder sb = new StringBuilder();
+		// create an update sql statements
+		sb = new StringBuilder();
 		for (Address address : list)
 		{
-			sb.append("UPDATE ADDRESSES SET FIRST_NAME='").append(address.getFirstname())
+			sb.append("UPDATE ").append("ADDRESSES ").append("SET FIRST_NAME='")
+				.append(address.getFirstname())
 				.append("', SURNAME='").append(address.getSurname()).append("', STREET='")
 				.append(address.getStreet()).append("', ZIP='").append(address.getZip())
 				.append("', CITY='").append(address.getCity()).append("' WHERE ID='")
@@ -109,6 +111,27 @@ public class ReadExcelAndWriteSql
 		expected = "UPDATE ADDRESSES SET FIRST_NAME='Firstname', SURNAME='Surname', STREET='Street', ZIP='zip', CITY='city' WHERE ID='id';\n"
 			+ "\n"
 			+ "UPDATE ADDRESSES SET FIRST_NAME='Henry', SURNAME='Miller', STREET='Seaside 5', ZIP='75345', CITY='Imaginationville' WHERE ID='1';\n"
+			+ "\n";
+		assertEquals(actual, expected);
+
+		// create a insert statement instead
+		sb = new StringBuilder();
+		for (Address address : list)
+		{
+			sb.append("INSERT INTO ").append("ADDRESSES ").append("(").append("ID, ")
+				.append("FIRST_NAME, ").append("SURNAME, ").append("STREET, ").append("ZIP, ")
+				.append("CITY").append(") ").append("VALUES ").append("(").append("'")
+				.append(address.getId()).append("'").append(", ").append("'")
+				.append(address.getFirstname()).append("'").append(", ").append("'")
+				.append(address.getSurname()).append("'").append(", ").append("'")
+				.append(address.getStreet()).append("'").append(", ").append("'")
+				.append(address.getZip()).append("'").append(", ").append("'")
+				.append(address.getCity()).append("'").append(")").append(";").append("\n\n");
+		}
+		actual = sb.toString();
+		expected = "INSERT INTO ADDRESSES (ID, FIRST_NAME, SURNAME, STREET, ZIP, CITY) VALUES ('id', 'Firstname', 'Surname', 'Street', 'zip', 'city');\n"
+			+ "\n"
+			+ "INSERT INTO ADDRESSES (ID, FIRST_NAME, SURNAME, STREET, ZIP, CITY) VALUES ('1', 'Henry', 'Miller', 'Seaside 5', '75345', 'Imaginationville');\n"
 			+ "\n";
 		assertEquals(actual, expected);
 	}
